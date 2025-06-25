@@ -14,7 +14,8 @@ const corsOptions = {
   origin: [
     'http://localhost:3000',
     'https://user-feedback-system-eosin.vercel.app',
-    'https://feedbacksystem.ishitasingh.live'
+    'https://feedbacksystem.ishitasingh.live',
+    'https://userfeedbacksystem.ishitasingh.live'
   ],
   credentials: true,
   optionsSuccessStatus: 200
