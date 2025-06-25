@@ -65,6 +65,61 @@ The User Feedback System is designed to bridge the gap between users and product
    - Can manage users, feedback, and categories
    - View analytics on feedback trends and user engagement
 
+## User Journey
+
+### New User Experience
+1. **First Visit**
+   - User lands on the homepage and sees existing feedback
+   - Notices they need an account to participate
+   - Clicks "Register" or "Login" button in the navigation bar
+
+2. **Account Creation**
+   - User chooses between traditional registration or "Sign in with Google"
+   - For traditional registration:
+     - Fills out the registration form (name, email, password)
+     - Submits form and account is created
+   - For Google sign-in:
+     - Clicks the Google button
+     - Approves the authentication request
+     - Account is created or linked automatically
+
+3. **Submitting First Feedback**
+   - Navigates to "New Feedback" page
+   - Fills out feedback form:
+     - Enters a descriptive title
+     - Selects appropriate category (Bug Report, Feature Request, Improvement, Positive Feedback)
+     - Writes detailed description
+     - Optionally uploads a screenshot or image
+   - Submits the feedback
+
+4. **Exploring Feedback**
+   - Browses the feedback list page
+   - Uses category filters to find relevant feedback
+   - Sorts by popularity, recency, or other criteria
+   - Clicks on feedback items to view details
+
+5. **Engagement**
+   - Reads comments on feedback items
+   - Adds their own comments to participate in discussions
+   - Upvotes or downvotes feedback to indicate agreement
+   - Checks comment counts to find active discussions
+
+### Regular User Experience
+1. **Return Visits**
+   - User logs in (remembers credentials or uses Google)
+   - Sees their previously submitted feedback on "My Feedback" page
+   - Receives notifications about new comments on their feedback
+
+2. **Profile Management**
+   - Updates profile information as needed
+   - Changes profile picture
+   - Views their feedback and comment history
+
+3. **Ongoing Participation**
+   - Regularly checks for new feedback
+   - Follows discussions on interesting topics
+   - Submits additional feedback as needed
+
 ## Tech Stack
 
 ### Frontend
