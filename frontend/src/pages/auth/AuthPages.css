@@ -1,0 +1,39 @@
+.auth-container {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.auth-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: none;
+}
+
+.auth-title {
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.auth-subtitle {
+  color: #6c757d;
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+}
+
+.form-control:focus {
+  background-color: #fff;
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.15);
+}
+
+.btn-primary {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+}

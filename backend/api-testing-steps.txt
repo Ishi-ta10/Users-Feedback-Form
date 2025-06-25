@@ -1,0 +1,66 @@
+# User Feedback System API Testing Steps
+# ===================================
+
+# This file contains step-by-step instructions to set up and test the User Feedback System API.
+
+# Step 1: Ensure MongoDB is running
+# ---------------------------------
+# Before starting the server, make sure your MongoDB instance is running.
+# If you're using a local MongoDB instance, you can check with:
+# > mongosh
+# 
+# If you're using MongoDB Atlas, ensure your connection string in .env is correct.
+
+# Step 2: Run the database connection check
+# -----------------------------------------
+# Verify that your application can connect to MongoDB:
+# > npm run db-check
+#
+# You should see "MongoDB Connection Successful" if everything is set up correctly.
+
+# Step 3: Seed the database with initial data (Optional)
+# ------------------------------------------------------
+# If you want to start with some sample data:
+# > npm run seed
+#
+# This will create sample users, categories, feedback, and comments.
+
+# Step 4: Start the development server
+# -----------------------------------
+# Start the server with:
+# > npm run dev
+#
+# The server should start on http://localhost:5000
+
+# Step 5: Test the API with Postman
+# ---------------------------------
+# Use the postman_testing_guide.txt file for detailed API testing instructions.
+
+# Login credentials for seeded users:
+# ----------------------------------
+# Admin User:
+# Email: admin@example.com
+# Password: 123456
+#
+# Regular User 1:
+# Email: john@example.com
+# Password: 123456
+#
+# Regular User 2:
+# Email: jane@example.com
+# Password: 123456
+
+# Testing Flow:
+# ------------
+# 1. Login with one of the users to get a JWT token
+# 2. Use the token for authenticated requests
+# 3. Test CRUD operations for feedback, categories, and comments
+# 4. Test upvoting functionality
+# 5. Test admin-only routes with the admin user token
+
+# Common Issues and Troubleshooting:
+# ---------------------------------
+# - If the server won't start, check if the port is already in use
+# - If you can't connect to MongoDB, ensure your connection string is correct
+# - If authentication fails, ensure your JWT_SECRET is set correctly in .env
+# - If you get "Not authorized" errors, check that you're including the token in your requests

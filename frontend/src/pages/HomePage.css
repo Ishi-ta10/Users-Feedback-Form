@@ -1,0 +1,44 @@
+.hero-section {
+  padding: 5rem 0;
+  background-color: #f8f9fa;
+  border-radius: 0 0 50px 50px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 800;
+  margin-bottom: 1.5rem;
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: #6c757d;
+  margin-bottom: 2rem;
+}
+
+.hero-buttons {
+  margin-top: 2rem;
+}
+
+.feature-card {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s;
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 3rem;
+  color: #0d6efd;
+  margin-bottom: 1.5rem;
+}
+
+.cta-section {
+  background-color: #f8f9fa;
+  border-radius: 50px 50px 0 0;
+  margin-top: 3rem;
+}

@@ -1,0 +1,55 @@
+.feedback-detail-page {
+  margin-bottom: 3rem;
+}
+
+.feedback-detail-card {
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  border: none;
+}
+
+.feedback-title {
+  font-weight: 700;
+  color: #212529;
+}
+
+.feedback-meta {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.category-badge, .status-badge {
+  border-radius: 30px;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+  font-size: 0.9rem;
+}
+
+.feedback-description {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+
+.upvote-container {
+  border: 1px solid #e9ecef;
+  border-radius: 10px;
+  padding: 1.5rem;
+  margin-top: 1rem;
+}
+
+.upvote-button {
+  border-radius: 30px;
+  padding: 0.5rem 1.5rem;
+  font-weight: 600;
+}
+
+.comments-section h3 {
+  font-weight: 600;
+}
+
+.feedback-detail-image {
+  max-width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

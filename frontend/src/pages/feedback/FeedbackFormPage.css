@@ -1,0 +1,59 @@
+.feedback-form-page h1 {
+  font-weight: 700;
+  color: #212529;
+}
+
+.form-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.form-card:hover {
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.feedback-form-page .back-button {
+  display: inline-flex;
+  align-items: center;
+  transition: all 0.2s ease;
+}
+
+.feedback-form-page .back-button:hover {
+  transform: translateX(-5px);
+}
+
+/* Page transitions */
+.feedback-form-page {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive padding */
+@media (max-width: 768px) {
+  .form-card .card-body {
+    padding: 1.5rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .form-card .card-body {
+    padding: 1.25rem !important;
+  }
+  
+  .feedback-form-page {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+}

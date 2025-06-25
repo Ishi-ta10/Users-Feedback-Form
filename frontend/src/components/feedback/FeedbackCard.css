@@ -1,0 +1,77 @@
+.feedback-card {
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.feedback-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  border-color: rgba(13, 110, 253, 0.3);
+}
+
+.feedback-title {
+  color: #212529;
+  text-decoration: none;
+  font-weight: 600;
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.feedback-title:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+}
+
+.feedback-meta {
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.upvote-button {
+  border-radius: 30px;
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+}
+
+.upvote-button:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+.category-badge, .status-badge {
+  border-radius: 30px;
+  font-weight: 500;
+  padding: 0.35rem 0.75rem;
+}
+
+.comments-counter {
+  font-size: 0.85rem;
+  color: #6c757d;
+}
+
+.feedback-image-container {
+  max-height: 200px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.feedback-image {
+  object-fit: cover;
+  width: 100%;
+  max-height: 200px;
+}
+
+.image-preview-container {
+  max-width: 300px;
+}
+
+.image-preview {
+  max-height: 150px;
+  object-fit: cover;
+}
