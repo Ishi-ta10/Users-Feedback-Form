@@ -3,8 +3,10 @@ import { Container, Row, Col, Card, Form, Button, Alert } from 'react-bootstrap'
 import { Link, useNavigate } from 'react-router-dom';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { login } from '../../services/authService';
+import { login, googleLogin } from '../../services/authService';
 import { useAuth } from '../../context/AuthContext';
+import { auth, googleProvider } from '../../config/firebase';
+import { signInWithPopup } from 'firebase/auth';
 import './AuthPages.css';
 
 // Validation schema for login form
@@ -18,6 +20,7 @@ const validationSchema = Yup.object({
 
 const LoginPage = () => {
   const [error, setError] = useState('');
+  const [googleLoading, setGoogleLoading] = useState(false);
   const navigate = useNavigate();
   const { login: authLogin } = useAuth();
 
@@ -36,6 +39,35 @@ const LoginPage = () => {
       );
     } finally {
       setSubmitting(false);
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    try {
+      setError('');
+      setGoogleLoading(true);
+      
+      // Sign in with Google using Firebase Authentication
+      const result = await signInWithPopup(auth, googleProvider);
+      
+      // Get the ID token
+      const idToken = await result.user.getIdToken();
+      
+      // Send the token to your backend
+      const response = await googleLogin(idToken);
+      
+      if (response.success) {
+        authLogin(response.user, response.token);
+        navigate('/');
+      }
+    } catch (err) {
+      console.error('Google login error:', err);
+      setError(
+        err.response?.data?.message || 
+        'Google login failed. Please try again.'
+      );
+    } finally {
+      setGoogleLoading(false);
     }
   };
 
@@ -103,9 +135,24 @@ const LoginPage = () => {
                       variant="primary" 
                       type="submit" 
                       className="w-100 mb-3"
-                      disabled={isSubmitting}
+                      disabled={isSubmitting || googleLoading}
                     >
                       {isSubmitting ? 'Logging in...' : 'Login'}
+                    </Button>
+                    
+                    <div className="or-divider my-3">
+                      <span>OR</span>
+                    </div>
+                    
+                    <Button 
+                      variant="outline-danger" 
+                      className="w-100 d-flex align-items-center justify-content-center" 
+                      onClick={handleGoogleLogin}
+                      disabled={isSubmitting || googleLoading}
+                      type="button"
+                    >
+                      <i className="fab fa-google me-2"></i>
+                      {googleLoading ? 'Connecting...' : 'Sign in with Google'}
                     </Button>
 
                     <div className="text-center mt-3">

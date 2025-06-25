@@ -88,6 +88,55 @@ exports.logout = async (req, res, next) => {
   });
 };
 
+// @desc    Login or Register with Google OAuth
+// @route   POST /api/users/google
+// @access  Public
+exports.googleAuth = async (req, res, next) => {
+  try {
+    const { idToken } = req.body;
+    
+    if (!idToken) {
+      return res.status(400).json({
+        success: false,
+        message: 'Please provide a valid Google ID token'
+      });
+    }
+
+    // Import Firebase admin
+    const admin = require('../config/firebase');
+    
+    // Verify the ID token
+    const decodedToken = await admin.auth().verifyIdToken(idToken);
+    const { email, name, picture, uid: googleId } = decodedToken;
+    
+    // Check if user exists
+    let user = await User.findOne({ email });
+    
+    if (!user) {
+      // Create new user if not exists
+      user = await User.create({
+        name,
+        email,
+        googleId,
+        avatar: picture,
+        role: 'user'
+      });
+    } else {
+      // Update existing user with Google info if not already linked
+      if (!user.googleId) {
+        user.googleId = googleId;
+        user.avatar = picture || user.avatar;
+        await user.save();
+      }
+    }
+    
+    sendTokenResponse(user, 200, res);
+  } catch (err) {
+    console.error('Google auth error:', err);
+    next(err);
+  }
+};
+
 // Get token from model, create cookie and send response
 const sendTokenResponse = (user, statusCode, res) => {
   // Create token

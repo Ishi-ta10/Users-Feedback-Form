@@ -66,6 +66,11 @@ const seedData = async () => {
       description: 'Suggestions to improve the user interface'
     });
 
+    const positiveCategory = await Category.create({
+      name: 'Positive Feedback',
+      description: 'Share positive experiences or praise about the system'
+    });
+
     console.log('Categories created...');
 
     // Create feedback

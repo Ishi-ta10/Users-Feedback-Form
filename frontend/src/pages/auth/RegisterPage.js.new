@@ -32,27 +32,6 @@ const RegisterPage = () => {
   const navigate = useNavigate();
   const { login: authLogin } = useAuth();
 
-  const handleSubmit = async (values, { setSubmitting }) => {
-    try {
-      // Remove confirmPassword before sending to API
-      const { confirmPassword, ...userData } = values;
-      
-      const response = await register(userData);
-      
-      if (response.success) {
-        authLogin(response.user, response.token);
-        navigate('/');
-      }
-    } catch (err) {
-      setError(
-        err.response?.data?.message || 
-        'Registration failed. Please try again.'
-      );
-    } finally {
-      setSubmitting(false);
-    }
-  };
-
   const handleGoogleLogin = async () => {
     try {
       setError('');
@@ -79,6 +58,27 @@ const RegisterPage = () => {
       );
     } finally {
       setGoogleLoading(false);
+    }
+  };
+
+  const handleSubmit = async (values, { setSubmitting }) => {
+    try {
+      // Remove confirmPassword before sending to API
+      const { confirmPassword, ...userData } = values;
+      
+      const response = await register(userData);
+      
+      if (response.success) {
+        authLogin(response.user, response.token);
+        navigate('/');
+      }
+    } catch (err) {
+      setError(
+        err.response?.data?.message || 
+        'Registration failed. Please try again.'
+      );
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -187,11 +187,11 @@ const RegisterPage = () => {
                     >
                       {isSubmitting ? 'Creating account...' : 'Register'}
                     </Button>
-
+                    
                     <div className="or-divider my-3">
                       <span>OR</span>
                     </div>
-
+                    
                     <Button 
                       variant="outline-danger" 
                       className="w-100 d-flex align-items-center justify-content-center" 

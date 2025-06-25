@@ -503,6 +503,8 @@ const getCategoryIcon = (categoryName) => {
     'Documentation': 'book',
     'Security': 'shield-alt',
     'Question': 'question-circle',
+    'Positive Feedback': 'thumbs-up',
+    'UI Improvement': 'palette',
     'Other': 'ellipsis-h'
   };
   
@@ -518,6 +520,8 @@ const getCategoryDescription = (categoryName) => {
     'Documentation': 'Help or documentation issues',
     'Security': 'Security concerns or vulnerabilities',
     'Question': 'General questions about the system',
+    'Positive Feedback': 'Share what you love about the app',
+    'UI Improvement': 'Suggestions to improve the user interface',
     'Other': 'Feedback that doesn\'t fit elsewhere'
   };
   

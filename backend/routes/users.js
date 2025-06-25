@@ -7,7 +7,7 @@ const {
   deleteUser
 } = require('../controllers/users');
 
-const { register, login, getMe, logout } = require('../controllers/auth');
+const { register, login, getMe, logout, googleAuth } = require('../controllers/auth');
 
 const router = express.Router();
 
@@ -16,6 +16,7 @@ const { protect, authorize } = require('../middleware/auth');
 // Auth routes
 router.post('/register', register);
 router.post('/login', login);
+router.post('/google', googleAuth);
 router.get('/me', protect, getMe);
 router.get('/logout', logout);
 

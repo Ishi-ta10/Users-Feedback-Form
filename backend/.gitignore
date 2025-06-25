@@ -23,3 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 .env
+
+feedback-system-655a7-firebase-adminsdk-fbsvc-a06038adeb.json

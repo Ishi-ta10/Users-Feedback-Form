@@ -17,7 +17,8 @@ export const getAllFeedback = async (params = {}) => {
         title: result.data[0].title,
         user: result.data[0].user?.name || 'Unknown',
         category: result.data[0].category?.name || 'Uncategorized',
-        hasComments: result.data[0].comments?.length > 0
+        commentsCount: result.data[0].comments?.length || 0,
+        commentsData: result.data[0].comments?.slice(0, 1) || []
       });
     }
     

@@ -20,3 +20,8 @@ export const updateProfile = async (userData) => {
   const response = await api.put('/users/me', userData);
   return response.data;
 };
+
+export const googleLogin = async (idToken) => {
+  const response = await api.post('/users/google', { idToken });
+  return response.data;
+};

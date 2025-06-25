@@ -75,3 +75,34 @@
   max-height: 150px;
   object-fit: cover;
 }
+
+.comment-count {
+  background-color: #f8f9fa;
+  border-radius: 20px;
+  padding: 2px 8px;
+  font-weight: 500;
+  color: #495057 !important;
+  border: 1px solid #e9ecef;
+  display: inline-flex;
+  align-items: center;
+}
+
+.comment-count i {
+  margin-right: 4px;
+  color: #6c757d;
+}
+
+.comment-count:hover {
+  background-color: #e9ecef;
+  cursor: pointer;
+}
+
+.comment-badge {
+  font-size: 0.75rem;
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+  background-color: #6c757d;
+  color: white;
+  padding: 0.25rem 0.5rem;
+}

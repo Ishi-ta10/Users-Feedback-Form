@@ -66,6 +66,7 @@ exports.getAllFeedback = async (req, res, next) => {
       .populate('category', 'name')
       .populate({
         path: 'comments',
+        select: 'text createdAt',
         populate: {
           path: 'user',
           select: 'name avatar'

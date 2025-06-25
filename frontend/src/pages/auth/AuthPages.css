@@ -37,3 +37,28 @@
   font-weight: 600;
   border-radius: 6px;
 }
+
+.or-divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.or-divider::before,
+.or-divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.or-divider span {
+  padding: 0 10px;
+}
+
+.btn-outline-danger {
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
