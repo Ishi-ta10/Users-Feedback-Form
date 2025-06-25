@@ -10,6 +10,7 @@ The User Feedback System is designed to bridge the gap between users and product
 
 - **Frontend**: [https://userfeedbacksystem.ishitasingh.live/](https://userfeedbacksystem.ishitasingh.live/)
 - **Backend**: [https://users-feedback-form.onrender.com](https://users-feedback-form.onrender.com)
+- **Dashboard (Need to login to access this page)**: [https://userfeedbacksystem.ishitasingh.live/dashboard](https://userfeedbacksystem.ishitasingh.live/dashboard)
 
 ## Backend Status:
 
